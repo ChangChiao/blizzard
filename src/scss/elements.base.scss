@@ -1,0 +1,26 @@
+
+body {
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    background: $bg;
+}
+
+
+ul, ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    &:active{
+        outline:none;
+    }
+}
+
+button{
+    margin: 0;
+    padding: 0;
+    border: 1px solid transparent; 
+    overflow: hidden;
+    outline: none;
+}
