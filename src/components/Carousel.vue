@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel"></div>
+    <div class="carousel"></div>
 </template>
 
 <script>
@@ -8,6 +8,6 @@ export default {};
 
 <style lang="scss" scoped>
 .carousel {
-  height: 514px;
+    height: 514px;
 }
 </style>

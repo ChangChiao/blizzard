@@ -1,0 +1,9 @@
+.link{
+    font-weight: 400;
+    line-height: 1.5;
+    color: #00aeff;
+    transition: .5s;
+    &:hover{
+        color: #fff;
+    }
+}

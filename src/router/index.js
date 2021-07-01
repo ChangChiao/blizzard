@@ -5,15 +5,15 @@ import LandingPage from "../views/LandingPage.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/",
-    name: "LandingPage",
-    component: LandingPage,
-  },
+    {
+        path: "/",
+        name: "LandingPage",
+        component: LandingPage,
+    },
 ];
 
 const router = new VueRouter({
-  routes,
+    routes,
 });
 
 export default router;

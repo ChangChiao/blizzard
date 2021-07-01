@@ -1,0 +1,23 @@
+@mixin pc-width() {
+    @media all and (min-width: $pc-media) {
+        @content;
+    }
+}
+
+@mixin pcs-width() {
+    @media all and (min-width: $pcs-media) {
+        @content;
+    }
+}
+
+@mixin pad-width() {
+    @media all and (min-width: $pad-media) {
+        @content;
+    }
+}
+
+@mixin phone-width() {
+    @media all and (min-width: $phone-media) {
+        @content;
+    }
+}

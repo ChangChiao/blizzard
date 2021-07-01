@@ -14,6 +14,14 @@
     line-height: normal;
     outline-offset: 2px;
     box-sizing: border-box;
+    transition: .3s;
+    @include pcs-width{
+        white-space: nowrap;
+    }
+    &:hover{
+        background-color: #007bc6;
+        border: solid 1px #79d4ff;
+    }
 }
 .btn{
     @extend %btn;
@@ -22,4 +30,7 @@
     @extend %btn;
     background-color: transparent;
     color: #00aeff;
+    &:hover{
+        color: #fff;
+    }
 }
