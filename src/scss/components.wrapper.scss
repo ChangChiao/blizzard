@@ -1,0 +1,16 @@
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 24px 16px;
+    max-width: 1600px;
+    margin: 0 auto;
+    
+    @include pad-width{
+        padding: 24px 16px 40px;
+    }
+    @include pcs-width{
+        padding: 56px;
+    }
+}

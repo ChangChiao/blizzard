@@ -1,0 +1,13 @@
+.title{
+    color: #fff;
+    font-size: 1.5rem;
+    @include phone-width{
+        font-size: 2rem;
+    }
+    @include pad-width{
+        font-size: 2.5rem;
+    }
+    @include pcs-width{
+        font-size: 2.75rem;
+    }
+}

@@ -1,75 +1,101 @@
 <template>
-  <header class="nav">
-    <ul class="nav__list">
-      <li>
-        <img class="nav__logo" src="@/assets/svg/logo3.svg" alt="" />
-      </li>
-      <li
-        v-for="(vo, i) in navList"
-        :key="'navItem' + i"
-        class="nav__list__item"
-      >
-        {{ vo.name }}
-        <i v-if="vo.subMenu" class="fas fa-chevron-down"></i>
-      </li>
-    </ul>
-    <ul class="nav__list service">
-      <li
-        v-for="(vo, i) in serviceList"
-        :key="'navServiceItem' + i"
-        class="nav__list__item"
-      >
-        {{ vo.name }}
-        <i v-if="vo.subMenu" class="fas fa-chevron-down"></i>
-      </li>
-    </ul>
-  </header>
+    <header class="nav">
+        <ul class="nav__list">
+            <li>
+                <img class="nav__logo" src="@/assets/svg/logo3.svg" alt="" />
+            </li>
+            <li
+                v-for="(vo, i) in navList"
+                :key="'navItem' + i"
+                @click="selectItem(vo.id)"
+                :class="[
+                    'nav__list__item',
+                    { 'nav__list__item--active': nowActive === vo.id },
+                ]"
+            >
+                {{ vo.name }}
+                <i v-if="vo.subMenu" class="fas fa-chevron-down"></i>
+            </li>
+        </ul>
+        <ul class="nav__list service">
+            <li
+                v-for="(vo, i) in serviceList"
+                :key="'navServiceItem' + i"
+                @click="selectItem(vo.id)"
+                class="nav__list__item"
+            >
+                {{ vo.name }}
+                <i v-if="vo.subMenu" class="fas fa-chevron-down"></i>
+            </li>
+        </ul>
+        <game-menu v-if="nowActive === 'game'" />
+        <competition-menu v-if="nowActive === 'competition'" />
+        <login-menu v-if="nowActive === 'account'" />
+    </header>
 </template>
 
 <script>
+import GameMenu from "@/components/GameMenu";
+import CompetitionMenu from "@/components/CompetitionMenu";
+import LoginMenu from "@/components/LoginMenu";
 export default {
-  data() {
-    return {
-      navList: [
-        {
-          name: "遊戲",
-          link: "",
-          subMenu: true,
+    components: {
+        GameMenu,
+        CompetitionMenu,
+        LoginMenu,
+    },
+    data() {
+        return {
+            nowActive: "",
+            navList: [
+                { id: "game", name: "遊戲", link: "", subMenu: true },
+                { id: "store", name: "商店", link: "", subMenu: false },
+                { id: "news", name: "最新消息", link: "", subMenu: false },
+                {
+                    id: "competition",
+                    name: "電子競技",
+                    link: "",
+                    subMenu: true,
+                },
+            ],
+            serviceList: [
+                { id: "service", name: "客服支援", link: "", subMenu: false },
+                { id: "account", name: "我的帳號", link: "", subMenu: true },
+            ],
+        };
+    },
+    methods: {
+        selectItem(id) {
+            this.nowActive = id;
         },
-        { name: "商店", link: "", subMenu: false },
-        { name: "最新消息", link: "", subMenu: false },
-        { name: "電子競技", link: "", subMenu: true },
-      ],
-      serviceList: [
-        { name: "客服支援", link: "", subMenu: false },
-        { name: "我的帳號", link: "", subMenu: true },
-      ],
-    };
-  },
-  methods: {},
+    },
 };
 </script>
 
 <style lang="scss" scoped>
 .nav {
-  padding: 0 40px;
-  height: 60px;
-  background: #000;
-  color: rgba($color: #fff, $alpha: 0.7);
-  display: flex;
-  justify-content: space-between;
-  &__logo {
-    width: 100px;
-    cursor: pointer;
-  }
-  &__list {
-    height: 100%;
+    padding: 0 40px;
+    height: 60px;
+    background: #000;
+    color: rgba($color: #fff, $alpha: 0.7);
     display: flex;
-    align-items: center;
-    &__item {
-      margin-left: 30px;
-      cursor: pointer;
+    justify-content: space-between;
+    &__logo {
+        width: 100px;
+        cursor: pointer;
     }
-  }
+    &__list {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        &__item {
+            margin-left: 30px;
+            cursor: pointer;
+            &:hover,
+            &.active {
+                color: #fff;
+            }
+        }
+    }
 }
 </style>
