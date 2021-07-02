@@ -44,15 +44,25 @@ export default {};
 <style lang="scss" scoped>
 .download {
     color: #fff;
-    background-image: url("~@/assets/images/download/1.webp");
+    background: url("~@/assets/images/download/1.webp") no-repeat;
+    background-position: center top;
+    background-size: cover;
     &__pic {
         height: 186px;
         margin: 24px 0;
+        order: -1;
         @include pad-width {
             height: 332px;
+            order: 1;
         }
         @include pc-width {
             margin: 0;
+        }
+    }
+    &__intro {
+        text-align: center;
+        @include pad-width {
+            text-align: left;
         }
     }
     .content {
@@ -60,6 +70,10 @@ export default {};
         svg {
             color: $line;
             margin-right: 8px;
+        }
+        text-align: center;
+        @include pc-width {
+            text-align: left;
         }
     }
     &__link {
@@ -69,9 +83,24 @@ export default {};
         margin-top: 16px;
         &.btn {
             margin-right: 16px;
+            display: none;
+            @include pad-width {
+                display: block;
+            }
             svg {
                 margin-left: 8px;
             }
+        }
+        &.btn-outline {
+            @include pad-width {
+                margin-right: 16px;
+            }
+        }
+    }
+    .title {
+        text-align: center;
+        @include pc-width {
+            text-align: left;
         }
     }
 }

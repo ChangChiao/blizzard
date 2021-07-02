@@ -53,21 +53,28 @@ export default {
     background-position: center top;
     background-repeat: no-repeat;
     .wrapper {
-        align-items: flex-start;
         text-align: left;
+        min-height: 60vw;
+        justify-content: flex-end;
         @include phone-width {
+            align-items: center;
             flex-direction: column;
+        }
+        @include pad-width {
+            min-height: 200px;
+            text-align: left;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        @include padl-width {
+            min-height: 250px;
+        }
+        @include pcs-width {
+            min-height: 300px;
         }
     }
     .content {
         padding: 20px 0;
-    }
-
-    @include pad-width {
-        min-height: 200px;
-    }
-    @include pcs-width {
-        min-height: 300px;
     }
 }
 

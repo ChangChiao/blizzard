@@ -3,7 +3,7 @@
         <div>
             <i class="fas fa-globe-americas"></i>
             繁體中文
-            <i class="fas fa-arrows-alt-v"></i>
+            <i class="fas fa-chevron-down"></i>
         </div>
         <img class="logo" src="@/assets/svg/logo.svg" alt="" />
         <ul class="footer__menu">
@@ -65,7 +65,7 @@ export default {
 <style lang="scss" scoped>
 .footer {
     color: rgba($color: #fff, $alpha: 0.7);
-    padding-top: 20px;
+    padding: 30px 0 50px;
     .fa-globe-americas {
         color: $line;
     }
@@ -77,9 +77,29 @@ export default {
         display: flex;
         justify-content: center;
         margin: 15px 0;
+        flex-wrap:wrap;
+        font-size: 14px;
+        @include pad-width{
+            font-size: 1rem;
+        }
         &__item {
             padding: 3px 10px;
-            border-right: 1px solid #ccc;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 10px;
+                background: #666;
+            }
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
         }
     }
     &__list {
@@ -87,8 +107,23 @@ export default {
         justify-content: center;
         font-size: 12px;
         &__item {
-            padding: 3px 10px;
-            border-right: 1px solid #ccc;
+            padding: 10px 10px;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 10px;
+                background: #666;
+            }
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
         }
     }
     &__link {
