@@ -77,9 +77,9 @@ export default {
         display: flex;
         justify-content: center;
         margin: 15px 0;
-        flex-wrap:wrap;
+        flex-wrap: wrap;
         font-size: 14px;
-        @include pad-width{
+        @include pad-width {
             font-size: 1rem;
         }
         &__item {

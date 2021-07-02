@@ -30,7 +30,7 @@ export default {
     methods: {
         nextBg() {
             this.timer = setInterval(() => {
-                if (this.index === 5) {
+                if (this.index === 4) {
                     this.index = 0;
                     return;
                 }
@@ -89,7 +89,7 @@ body {
             url("~@/assets/images/explore/2.webp")
             url("~@/assets/images/explore/3.webp")
             url("~@/assets/images/explore/4.webp")
-            url("~@/assets/images/explore/5.webp");
+            url("~@/assets/images/explore/0.webp");
     }
 }
 </style>
