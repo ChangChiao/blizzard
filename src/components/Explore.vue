@@ -30,7 +30,7 @@ export default {
     methods: {
         nextBg() {
             this.timer = setInterval(() => {
-                if (this.index === 5) {
+                if (this.index === 4) {
                     this.index = 0;
                     return;
                 }
@@ -53,21 +53,28 @@ export default {
     background-position: center top;
     background-repeat: no-repeat;
     .wrapper {
-        align-items: flex-start;
         text-align: left;
+        min-height: 60vw;
+        justify-content: flex-end;
         @include phone-width {
+            align-items: center;
             flex-direction: column;
+        }
+        @include pad-width {
+            min-height: 200px;
+            text-align: left;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        @include padl-width {
+            min-height: 250px;
+        }
+        @include pcs-width {
+            min-height: 300px;
         }
     }
     .content {
         padding: 20px 0;
-    }
-
-    @include pad-width {
-        min-height: 200px;
-    }
-    @include pcs-width {
-        min-height: 300px;
     }
 }
 
@@ -82,7 +89,7 @@ body {
             url("~@/assets/images/explore/2.webp")
             url("~@/assets/images/explore/3.webp")
             url("~@/assets/images/explore/4.webp")
-            url("~@/assets/images/explore/5.webp");
+            url("~@/assets/images/explore/0.webp");
     }
 }
 </style>

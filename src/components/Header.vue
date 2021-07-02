@@ -66,6 +66,10 @@ export default {
     },
     methods: {
         selectItem(id) {
+            if (id === this.nowActive) {
+                this.nowActive = "";
+                return;
+            }
             this.nowActive = id;
         },
     },
@@ -81,7 +85,7 @@ export default {
     display: flex;
     justify-content: space-between;
     &__logo {
-        width: 100px;
+        width: 60px;
         cursor: pointer;
     }
     &__list {
@@ -91,9 +95,17 @@ export default {
         &__item {
             margin-left: 30px;
             cursor: pointer;
-            &:hover,
-            &.active {
+            svg {
+                color: #999;
+            }
+            &:hover {
                 color: #fff;
+            }
+            &--active {
+                color: #fff;
+                svg {
+                    transform: rotate(180deg);
+                }
             }
         }
     }

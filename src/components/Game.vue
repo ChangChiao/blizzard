@@ -27,11 +27,14 @@ export default {};
 
 <style lang="scss" scoped>
 .game {
-    padding: 0 40px;
+    padding: 16px;
     background-image: url("~@/assets/images/gameBg.jpg");
     background-position: top center;
     background-repeat: no-repeat;
     color: rgba($color: #fff, $alpha: 0.7);
+    @include phone-width {
+        padding: 0 40px;
+    }
     &__title {
         display: flex;
         margin: 0 auto;

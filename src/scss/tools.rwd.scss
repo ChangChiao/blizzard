@@ -10,6 +10,12 @@
     }
 }
 
+@mixin padl-width() {
+    @media all and (min-width: $padl-media) {
+        @content;
+    }
+}
+
 @mixin pad-width() {
     @media all and (min-width: $pad-media) {
         @content;
