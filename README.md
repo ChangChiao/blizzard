@@ -2,6 +2,8 @@
 
 ## 題目：參考 Blizzard 官網的 landing page https://www.blizzard.com/zh-tw/
 
+### DEMO網址 https://changchiao.github.io/blizzard/
+
 ### 使用技術
 
 - Vue CLI搭配SCSS開發
