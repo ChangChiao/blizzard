@@ -124,7 +124,6 @@ export default {
 .submenu {
     width: 100%;
     margin: 0 auto;
-    padding: 20px 40px;
     position: absolute;
     z-index: 100;
     box-sizing: border-box;
@@ -146,17 +145,13 @@ export default {
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        width: 100%;
         margin: 0 auto;
-        padding-bottom: 20px;
-        @include padl-width {
-            width: 75%;
-        }
+        padding: 20px 40px;
         &__item {
             opacity: 0;
             width: calc(100% / 9);
             display: inline-block;
-            margin: 10px 0;
+            margin: 10px 0 20px;
             cursor: pointer;
             img {
                 width: 40%;
@@ -173,7 +168,7 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-top: 20px;
+            height: 50px;
             border-top: solid 1px rgba(255, 255, 255, 0.08);
             &__item {
                 margin: 0 20px;
@@ -187,7 +182,7 @@ export default {
     }
 }
 
-@for $i from 0 to 13 {
+@for $i from 1 to 14 {
     .submenu__list__item:nth-child(#{$i}) {
         animation: fadeIn 0.1s $i * 0.05s forwards ease-out;
     }
@@ -196,7 +191,7 @@ export default {
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(-50%);
+        transform: translateY(-30%);
     }
     100% {
         opacity: 1;

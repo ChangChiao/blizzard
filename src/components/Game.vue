@@ -97,8 +97,9 @@ export default {
     background-position: top center;
     background-repeat: no-repeat;
     color: rgba($color: #fff, $alpha: 0.7);
+    // box-sizing: border-box;
     @include phone-width {
-        padding: 0 40px;
+        padding: 0 16px;
     }
     &__title {
         display: flex;

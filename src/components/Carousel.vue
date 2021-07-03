@@ -168,7 +168,7 @@ export default {
             text-align: center;
             animation: slide 3s forwards ease-out;
             @include phone-width {
-                padding: 7% 30px 0;
+                padding: 5% 30px 0;
             }
             @include pad-width {
                 padding: 2% 30px 0;

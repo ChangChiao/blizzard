@@ -125,8 +125,12 @@ export default {
             display: flex;
             align-items: center;
             cursor: pointer;
+            font-size: 16px;
+            @include pcs-width {
+                font-size: 20px;
+            }
             i {
-                color: #999;
+                color: #666;
                 margin-left: 5px;
             }
             &:hover {
