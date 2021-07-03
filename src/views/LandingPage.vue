@@ -1,7 +1,8 @@
 <template>
     <div class="landing">
         <Header />
-        <mobile-header />
+        <mobile-header @openMenu="controlMenu" />
+        <mobile-menu v-if="isShowMenu" @closeMenu="controlMenu" />
         <Carousel />
         <Game />
         <Download />
@@ -18,6 +19,7 @@ import Download from "@/components/Download";
 import Explore from "@/components/Explore";
 import Footer from "@/components/Footer";
 import MobileHeader from "@/components/MobileHeader.vue";
+import MobileMenu from "@/components/MobileMenu.vue";
 export default {
     components: {
         Header,
@@ -27,6 +29,22 @@ export default {
         Explore,
         Footer,
         MobileHeader,
+        MobileMenu,
+    },
+    data() {
+        return {
+            isShowMenu: false,
+        };
+    },
+    methods: {
+        controlMenu(boolean) {
+            this.isShowMenu = boolean;
+            if (boolean) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "";
+            }
+        },
     },
 };
 </script>

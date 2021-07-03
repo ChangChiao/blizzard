@@ -1,24 +1,33 @@
 <template>
     <header class="mobile__header">
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" @click="openMenu"></i>
         <img class="mobile__header__logo" src="@/assets/svg/logo3.svg" alt="" />
         <i class="far fa-user"></i>
     </header>
 </template>
 
 <script>
-export default {};
+export default {
+    methods: {
+        openMenu() {
+            this.$emit("openMenu", true);
+        },
+    },
+};
 </script>
 
 <style lang="scss">
 .mobile {
     &__header {
-        position: relative;
+        box-sizing: border-box;
+        position: fixed;
         background: #000;
+        width: 100%;
         height: 48px;
         padding: 0 20px;
         justify-content: space-between;
         align-items: center;
+        z-index: 200;
         &__logo {
             position: absolute;
             right: 0;

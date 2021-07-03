@@ -138,10 +138,13 @@ export default {
 
 <style lang="scss" scoped>
 .carousel {
-    height: 514px;
+    height: 450px;
     overflow-x: hidden;
     text-align: left;
     // position: relative;
+    @include pad-width {
+        height: 514px;
+    }
     &:hover {
         .carousel__btn {
             display: flex;
@@ -150,7 +153,10 @@ export default {
     &__list {
         width: 400%;
         display: flex;
-        height: calc(100% - 24px);
+        height: calc(100% - 16px);
+        @include pad-width {
+            height: calc(100% - 24px);
+        }
         &__item {
             box-sizing: border-box;
             width: 100%;
@@ -205,15 +211,21 @@ export default {
         justify-content: center;
         min-height: 1px;
         width: 100%;
-        height: 24px;
         background-color: #0b0d12;
+        height: 16px;
+        @include pad-width {
+            height: 24px;
+        }
         &__btn {
             background: #00aeff;
             width: 50px;
-            height: 10px;
             margin: 0 5px;
             cursor: pointer;
             opacity: 0.7;
+            height: 6px;
+            @include pad-width {
+                height: 10px;
+            }
             &--active {
                 opacity: 1;
             }

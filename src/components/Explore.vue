@@ -52,6 +52,10 @@ export default {
     transition: background-image 1s ease-in-out;
     background-position: center top;
     background-repeat: no-repeat;
+    background-size: cotain;
+    @include pad-width {
+        height: 514px;
+    }
     .wrapper {
         text-align: left;
         min-height: 60vw;
