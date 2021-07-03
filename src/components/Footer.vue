@@ -42,13 +42,28 @@ export default {
     data() {
         return {
             footerMenu: [
-                { name: "工作機會", link: "" },
-                { name: "關於", link: "" },
-                { name: "客服支援", link: "" },
-                { name: "聯繫我們", link: "" },
-                { name: "媒體報導", link: "" },
-                { name: "API", link: "" },
-                { name: "網站地圖", link: "" },
+                {
+                    name: "工作機會",
+                    link: "https://careers.blizzard.com/global/en",
+                },
+                {
+                    name: "關於",
+                    link: "https://www.blizzard.com/zh-tw/company/about/",
+                },
+                {
+                    name: "客服支援",
+                    link: "https://www.blizzard.com/zh-tw/site-map",
+                },
+                {
+                    name: "聯繫我們",
+                    link: "https://www.blizzard.com/zh-tw/company/contact",
+                },
+                { name: "媒體報導", link: "https://blizzard.gamespress.com/" },
+                { name: "API", link: "https://develop.battle.net/" },
+                {
+                    name: "網站地圖",
+                    link: "https://www.blizzard.com/zh-tw/site-map",
+                },
             ],
             footerList: [
                 { name: "隱私", link: "" },

@@ -67,7 +67,7 @@ export default {};
     }
     .content {
         margin: 8px 0;
-        svg {
+        i {
             color: $line;
             margin-right: 8px;
         }
@@ -87,7 +87,7 @@ export default {};
             @include pad-width {
                 display: block;
             }
-            svg {
+            i {
                 margin-left: 8px;
             }
         }

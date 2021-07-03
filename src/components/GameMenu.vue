@@ -126,6 +126,7 @@ export default {
     margin: 0 auto;
     padding: 20px 40px;
     position: absolute;
+    z-index: 100;
     box-sizing: border-box;
     left: 0;
     right: 0;
@@ -145,9 +146,12 @@ export default {
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        width: 75%;
+        width: 100%;
         margin: 0 auto;
         padding-bottom: 20px;
+        @include padl-width {
+            width: 75%;
+        }
         &__item {
             opacity: 0;
             width: calc(100% / 9);
@@ -174,7 +178,7 @@ export default {
             &__item {
                 margin: 0 20px;
                 cursor: pointer;
-                svg {
+                i {
                     color: $line;
                     margin-right: 5px;
                 }
