@@ -1,24 +1,14 @@
 # blizzard
 
-## Project setup
-```
-yarn install
-```
+## 題目：參考 Blizzard 官網的 landing page https://www.blizzard.com/zh-tw/
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+### 使用技術
 
-### Compiles and minifies for production
-```
-yarn build
-```
+- Vue CLI搭配SCSS開發
+- 使用ITCSS架構和BEM管理SCSS
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 完成項目
+- 所有section
+- header UI(含dropdown UI & 手機板)
+- RWD
+- 手刻輪播功能
