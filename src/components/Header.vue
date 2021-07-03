@@ -2,12 +2,18 @@
     <header class="nav">
         <ul class="nav__list">
             <li>
-                <img class="nav__logo" src="@/assets/svg/logo3.svg" alt="" />
+                <a href="/">
+                    <img
+                        class="nav__logo"
+                        src="@/assets/svg/logo3.svg"
+                        alt=""
+                    />
+                </a>
             </li>
             <li
                 v-for="(vo, i) in navList"
                 :key="'navItem' + i"
-                @click="selectItem(vo.id)"
+                @click="selectItem(vo)"
                 :class="[
                     'nav__list__item',
                     { 'nav__list__item--active': nowActive === vo.id },
@@ -21,8 +27,11 @@
             <li
                 v-for="(vo, i) in serviceList"
                 :key="'navServiceItem' + i"
-                @click="selectItem(vo.id)"
-                class="nav__list__item"
+                @click="selectItem(vo)"
+                :class="[
+                    'nav__list__item',
+                    { 'nav__list__item--active': nowActive === vo.id },
+                ]"
             >
                 {{ vo.name }}
                 <i v-if="vo.subMenu" class="fas fa-chevron-down"></i>
@@ -49,8 +58,18 @@ export default {
             nowActive: "",
             navList: [
                 { id: "game", name: "遊戲", link: "", subMenu: true },
-                { id: "store", name: "商店", link: "", subMenu: false },
-                { id: "news", name: "最新消息", link: "", subMenu: false },
+                {
+                    id: "store",
+                    name: "商店",
+                    link: "https://tw.shop.battle.net/zh-tw",
+                    subMenu: false,
+                },
+                {
+                    id: "news",
+                    name: "最新消息",
+                    link: "https://news.blizzard.com/zh-tw",
+                    subMenu: false,
+                },
                 {
                     id: "competition",
                     name: "電子競技",
@@ -59,18 +78,27 @@ export default {
                 },
             ],
             serviceList: [
-                { id: "service", name: "客服支援", link: "", subMenu: false },
+                {
+                    id: "service",
+                    name: "客服支援",
+                    link: "https://tw.battle.net/support/zh/",
+                    subMenu: false,
+                },
                 { id: "account", name: "我的帳號", link: "", subMenu: true },
             ],
         };
     },
     methods: {
-        selectItem(id) {
+        selectItem(vo) {
+            const { id, link } = vo;
             if (id === this.nowActive) {
                 this.nowActive = "";
                 return;
             }
             this.nowActive = id;
+            if (link) {
+                location.href = link;
+            }
         },
     },
 };
@@ -85,25 +113,28 @@ export default {
     display: flex;
     justify-content: space-between;
     &__logo {
-        width: 60px;
+        width: 76px;
         cursor: pointer;
     }
     &__list {
-        height: 100%;
         display: flex;
         align-items: center;
         &__item {
+            height: 100%;
             margin-left: 30px;
+            display: flex;
+            align-items: center;
             cursor: pointer;
-            svg {
+            i {
                 color: #999;
+                margin-left: 5px;
             }
             &:hover {
                 color: #fff;
             }
             &--active {
                 color: #fff;
-                svg {
+                i {
                     transform: rotate(180deg);
                 }
             }

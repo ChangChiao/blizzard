@@ -28,7 +28,7 @@ export default {};
             margin: auto;
             width: 60px;
         }
-        svg {
+        i {
             color: $line;
             font-size: 24px;
         }
