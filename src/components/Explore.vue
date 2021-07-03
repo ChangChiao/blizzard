@@ -53,8 +53,13 @@ export default {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cotain;
+    box-sizing: border-box;
     @include pad-width {
-        height: 514px;
+        height: 362px;
+        padding: 10px;
+    }
+    @include pcs-width {
+        height: 412px;
     }
     .wrapper {
         text-align: left;
@@ -78,7 +83,7 @@ export default {
         }
     }
     .content {
-        padding: 20px 0;
+        padding: 5px 0 20px;
     }
 }
 

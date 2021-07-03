@@ -1,19 +1,11 @@
 .container{
     position: relative;
-    max-width: 1600px;
     margin: 0 auto;
-    padding: 16px 8px;
-    // @include phone-width{
-    //     // padding: 16px 0;
-    // }
-    // @include pad-width{
-    //     // padding: 56px;
-    // }
+    padding: 16px 0px;
     @include phone-width {
         max-width: 408px;
     }
     @include pad-width {
-        padding: 16px;
         max-width: 612px;
     }
     @include pcs-width {

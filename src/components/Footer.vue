@@ -16,9 +16,11 @@
             </li>
         </ul>
         <div class="footer__link">
-            一個程式連結所有遊戲:<a class="link" href=""
-                >Battle.net 桌面應用程式</a
-            >
+            一個程式連結所有遊戲:
+            <a class="link" href="">
+                <i class="fas fa-recycle"></i>
+                Battle.net 桌面應用程式
+            </a>
         </div>
         <p class="copyRight">
             ©2021 美商暴雪娛樂股份有限公司（BLIZZARD ENTERTAINMENT,
@@ -100,6 +102,10 @@ export default {
         &__item {
             padding: 3px 10px;
             position: relative;
+            cursor: pointer;
+            &:hover {
+                color: #fff;
+            }
             &::after {
                 content: "";
                 position: absolute;
@@ -124,6 +130,7 @@ export default {
         &__item {
             padding: 10px 10px;
             position: relative;
+            cursor: pointer;
             &::after {
                 content: "";
                 position: absolute;
