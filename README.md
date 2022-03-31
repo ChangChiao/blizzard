@@ -1,8 +1,8 @@
 # blizzard
 
-## 題目：參考 Blizzard 官網的 landing page https://www.blizzard.com/zh-tw/
+## 題目：參考 Blizzard 官網的 [landing page](https://www.blizzard.com/zh-tw/)
 
-### DEMO網址 https://changchiao.github.io/blizzard/
+### DEMO網址 [請點我](https://changchiao.github.io/blizzard/)
 
 ### 使用技術
 
